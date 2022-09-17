@@ -1,0 +1,12 @@
+body {
+    text-align: center;
+}
+
+div.container {
+    text-align: center;
+}
+  
+ul.users {
+    display: inline-block;
+    text-align: left;
+}
