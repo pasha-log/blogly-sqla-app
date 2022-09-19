@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %} Create a User {% endblock %}
+{% block title %} <h1>Create a User</h1> {% endblock %}
+
 {% block content %}
+<hr class="solid">
     <form method="POST">
         <input type="text" name="first_name" placeholder="Enter a first name">
         <br>
@@ -12,6 +14,6 @@
         <input type="text" name="image_url" placeholder="Provide an image for this user">
         <br>
         <br>
-        <button>Add</button>
+        <button class="btn btn-primary btn-sm">Add</button>
     </form>
 {% endblock %}

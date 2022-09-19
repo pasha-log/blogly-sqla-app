@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} <h1>Welcome to Blogly</h1> {% endblock %}
+
+{% block content %}
+<hr class="solid">
+<div class="container">
+    <ul class="users">
+        {% for post in posts %}
+        {% for user in users %}
+        {% if user.id == post.user_id %}
+        <li>
+        <a href="/posts/{{ post.id }}">{{post.title}}</a>
+        <p>{{post.content}}</p> 
+        <i>By {{ user.full_name }} on {{ post.friendly_date_time }}</i> 
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
