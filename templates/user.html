@@ -34,9 +34,10 @@
         {% for post in user.posts %}
         <li><a href="/posts/{{ post.id }}">{{post.title}}</a></li>
         <small><i>{{ post.friendly_date_time }}</i></small>
+        <form class="delete-button"><button class="btn btn-danger btn-sm" formaction="/posts/{{ post.id }}/delete" formmethod="POST">Delete</button></form>
         {% endfor %}
     </ul>
-    <form class="delete-button">
+    <form class="add-post-button">
         <button class="btn btn-primary btn-sm" formaction="/users/{{ user.id }}/posts/new">Add Post</button>
     </form>
 </div>
