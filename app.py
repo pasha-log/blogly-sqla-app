@@ -110,17 +110,9 @@ def process_new_post(user_id):
     new_post = Post(title=title, content=content, user_id=user_id)
     db.session.add(new_post)
     db.session.commit()
-    if_made_new_post()
-    # if_no_title_or_content(title, content)
+    if_made_new_post(title, content, user_id)
 
     return redirect(f'/users/{user_id}')
-
-# @app.route('/users/<int:user_id>/posts/new', methods=["POST"]) 
-# def handle_missing_post_details(user_id):
-#     """Takes new post info, adds it to db, and redirects to user's user page"""
-#     user = User.query.get_or_404(user_id)
-#     if_no_title_or_content()
-#     return redirect('/users/<int:user_id>/posts/new', user=user) 
 
 @app.route('/posts/<int:post_id>')
 def show_post(post_id): 

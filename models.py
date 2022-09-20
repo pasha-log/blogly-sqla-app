@@ -19,7 +19,7 @@ class User(db.Model):
     last_name = db.Column(db.Text, nullable=False) 
     image_url = db.Column(db.Text, nullable=False, default=DEFAULT_IMAGE_URL)
 
-    posts = db.relationship('Post', backref='users') # solution includes cascade="all, delete-orphan"
+    posts = db.relationship('Post', backref='users', cascade="all, delete-orphan")
 
     @property
     def full_name(self): 

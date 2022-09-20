@@ -14,7 +14,6 @@
 {% endblock %}
 {% block content %}
 <br>
-<hr class="solid">
 {% with messages = get_flashed_messages(with_categories=true) %}
 {% if messages %}
 <section class="messages">
@@ -24,12 +23,13 @@
 </section>
 {% endif %}
 {% endwith %}
+<hr class="solid">
 <br>
 <img class="img" src="{{user.image_url}}" width="100px" height="100px">
 <br>
 <br>
 <div class="user-post-list">
-    <h1>Posts</h1>
+    <h3 class="Posts">Posts</h3>
     <ul class="posts">
         {% for post in user.posts %}
         <li><a href="/posts/{{ post.id }}">{{post.title}}</a></li>
