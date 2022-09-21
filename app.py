@@ -92,7 +92,7 @@ def show_top_five():
     users = User.query.all()
     q = Post.query
     posts = q.order_by(desc('created_at')).limit(5).all() 
-    return render_template('homepage.html', posts=posts, users=users, tags=tags)
+    return render_template('homepage.html', posts=posts, users=users)
 
 @app.route('/users/<int:user_id>/posts/new') 
 def show_post_form(user_id): 
