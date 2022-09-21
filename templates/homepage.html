@@ -4,6 +4,9 @@
 
 {% block content %}
 <hr class="solid">
+<form class="see-tags">
+    <button class="btn btn-primary btn-sm" formaction="/tags">Tags</button>
+</form>
 <div class="container">
     <ul class="users">
         {% for post in posts %}
@@ -13,6 +16,11 @@
         <a href="/posts/{{ post.id }}">{{post.title}}</a>
         <p>{{post.content}}</p> 
         <i>By {{ user.full_name }} on {{ post.friendly_date_time }}</i> 
+        <p>Tags:
+            {% for tag in tags %}
+            <a href="/tags/{{ tag.id }}" class="btn btn-primary btn-sm">{{ tag.name }}</a>
+            {% endfor %}
+        </p>
         </li>
         {% endif %}
         {% endfor %}

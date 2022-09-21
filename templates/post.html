@@ -6,6 +6,12 @@
 
 <p>{{post.content}}</p> 
 <i>By {{ user.full_name }} on {{ post.friendly_date_time }}</i>
+<br>
+<p>Tags:
+    {% for tag in tags %}
+    <a href="/tags/{{ tag.id }}" class="btn btn-primary btn-sm">{{ tag.name }}</a>
+    {% endfor %}
+</p>
 
 <form class="post-buttons">
 <a href="/users/{{ post.user_id }}" class="btn btn-outline-info">Cancel</a>

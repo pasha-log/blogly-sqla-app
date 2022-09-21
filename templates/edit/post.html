@@ -12,6 +12,11 @@
     <textarea name="content">{{ post.content }}</textarea>
     <br>
     <br>
+        {% for tag in tags %}
+            <label class="form-check-label" for="firstCheckbox"><input class="form-check-input me-1" type="checkbox" value="{{ tag.id }}" name="tags" id="firstCheckbox">{{ tag.name }}</label>
+        {% endfor %}
+    <br>
+    <br>
     <a href="/users/{{ post.user_id }}" class="btn btn-outline-info">Cancel</a>
     <button class="btn btn-primary btn-sm">Edit</button>
 </form>

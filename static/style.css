@@ -34,6 +34,15 @@ ul.posts {
     text-align: center;
 }
 
+ul.tags {
+    display: inline-block;
+    text-align: left;
+}
+
+.from-check-label {
+    text-align: left;
+}
+
 form.user-buttons {
     position: absolute; 
     right: 0; 
@@ -75,6 +84,8 @@ hr.solid {
 .messages .error {
     background-color: rgb(255, 0, 0, 0.1);
     width: 30%;
+    position: absolute;
+    top: 135px;
 }
 
 .messages p {
