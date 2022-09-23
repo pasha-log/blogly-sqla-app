@@ -1,30 +1,39 @@
 {% extends 'base.html' %}
 
-{% block title %} <h1>Welcome to Blogly</h1> {% endblock %}
+{% block title %} <h1 id="logo">Welcome to Blogly</h1> {% endblock %}
 
 {% block content %}
 <hr class="solid">
 <form class="see-tags">
     <button class="btn btn-primary btn-sm" formaction="/tags">Tags</button>
 </form>
+<br>
 <div class="container">
-    <ul class="users">
-        {% for post in posts %}
-        {% for user in users %}
-        {% if user.id == post.user_id %}
-        <li>
-        <a href="/posts/{{ post.id }}">{{post.title}}</a>
-        <p>{{post.content}}</p> 
-        <i>By {{ user.full_name }} on {{ post.friendly_date_time }}</i> 
-        <p>Tags:
-            {% for tag in tags %}
-            <a href="/tags/{{ tag.id }}" class="btn btn-primary btn-sm">{{ tag.name }}</a>
+    <div class="absolute">
+        <ul class="users">
+            {% for post in posts %}
+                {% for user in users %}
+                    {% if user.id == post.user_id %}
+                        <li>
+                            <a href="/posts/{{ post.id }}">{{post.title}}</a>
+                                <p>{{post.content}}</p> 
+                                <i>By {{ user.full_name }} on {{ post.friendly_date_time }}</i> 
+                                <p>Tags:
+                                    {% for tag in tags %}
+                                        {% for item in post_tags %}
+                                            {% if tag.id == item.tag_id %}
+                                                {% if item.post_id == post.id %}
+                                                    <a href="/tags/{{ item.tag_id }}" class="btn btn-primary btn-sm">{{ tag.name }}</a>
+                                                {% endif %}
+                                            {% endif %}
+                                        {% endfor %}
+                                    {% endfor %}
+                                </p>
+                        </li>
+                    {% endif %}
+                {% endfor %}
             {% endfor %}
-        </p>
-        </li>
-        {% endif %}
-        {% endfor %}
-        {% endfor %}
-    </ul>
+        </ul>
+    </div>
 </div>
 {% endblock %}
