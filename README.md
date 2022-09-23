@@ -1,6 +1,6 @@
 # Blogly Users 
 
-<img src='screenshot-blogly (2).png' alt='' height='350' width='550'>
+<img src='screenshot-blogly (2).png' alt='' height='350' width='600'>
 
 ## Description  
 
