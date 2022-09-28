@@ -10,15 +10,15 @@
 <br>
 <div class="container">
     <div class="absolute">
-        <ul class="users">
+        <ul class="homepage-users">
             {% for post in posts %}
                 {% for user in users %}
                     {% if user.id == post.user_id %}
                         <li>
-                            <a href="/posts/{{ post.id }}">{{post.title}}</a>
-                                <p>{{post.content}}</p> 
+                            <a class="post-title" href="/posts/{{ post.id }}">{{post.title}}</a>
+                                <p class="post-content">{{post.content}}</p> 
                                 <i>By {{ user.full_name }} on {{ post.friendly_date_time }}</i> 
-                                <p>Tags:
+                                <p class="tags-label">Tags:
                                     {% for tag in tags %}
                                         {% for item in post_tags %}
                                             {% if tag.id == item.tag_id %}

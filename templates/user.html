@@ -21,7 +21,7 @@
     <h3 class="Posts">Posts</h3>
     <ul class="posts">
         {% for post in user.posts %}
-        <li><a href="/posts/{{ post.id }}">{{post.title}}</a></li>
+        <li><a class="user-post" href="/posts/{{ post.id }}">{{post.title}}</a></li>
         <small><i>{{ post.friendly_date_time }}</i></small>
         {% endfor %}
     </ul>

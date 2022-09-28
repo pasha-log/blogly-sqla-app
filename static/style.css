@@ -8,6 +8,7 @@ font-family: 'Courgette', cursive;
 
 body {
     text-align: center;
+    background: #d3e9ff;
 }
 
 div.container {
@@ -22,8 +23,54 @@ div.user-post-list {
     align-items: center;
 }
 
-ul.users {
-    margin: auto;
+ul {
+    font-size: 200%;
+    list-style-image: linear-gradient(to left bottom, rgb(252, 16, 16), blue);
+    font-family: 'Roboto Mono', monospace;
+}
+  
+ul.homepage-users li {
+    background: #6db3ff;
+    margin: 5px;
+    width: 800px;
+    height: 200px;
+}
+
+p.tags-label {
+    font-size: 17px;
+}
+
+a.post-title {
+    font-size: 30px;
+    color: #f6f7f8; 
+
+}
+
+a.user-post {
+    font-size: 30px;
+    color: #007bff; 
+
+}
+
+p.post-content {
+    font-size: 20px;
+}
+
+a {
+color: #f9f9f9; 
+}
+
+i {
+    font-size: 10px;
+}
+
+ul.users li{
+    align-items: center;
+    text-align: left;
+    background: #6db3ff;
+    margin: 5px;
+    width: 300px;
+    height: 50px;
 }
 
 div.absolute {
@@ -32,7 +79,7 @@ div.absolute {
 
 ul.posts {
     display: inline-block;
-    text-align: center;
+    text-align: left;
 }
 
 ul.tags {
@@ -47,7 +94,7 @@ ul.tags {
 form.user-buttons {
     position: absolute; 
     right: 0; 
-    left: 370px; 
+    left: 470px; 
     top: 60px;
 } 
 
