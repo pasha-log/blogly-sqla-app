@@ -5,4 +5,4 @@
 
 ## Description  
 
-Create a fake profile on this simple SQLAlchemy app. 
+Create a fake profile on this simple SQLAlchemy app. Create a post and add tags to them. Create your own tags as well!
